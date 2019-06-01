@@ -9,11 +9,11 @@
   },
   "scripts": {
     "react-build": "webpack -w -d",
-    "seed-db": "node database/seed.js",
-    "dev:server": "env-cmd nodemon server/index.js",
+    "seed": "node database/seed.js",
+    "start": "nodemon server/index.js",
     "test": "jest",
     "test:c": "jest --coverage",
-    "start": "node server/index.js",
+    "changeBacktostart": "node server/index.js",
     "build": "webpack -p"
   },
   "jest": {
