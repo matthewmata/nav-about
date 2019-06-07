@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const cors = require('cors');
-const db = require('../database/index.js');
+const db = require('../database/Mongo/index.js');
 const router = require('./router');
 
 // Creating server and port number

@@ -8,12 +8,13 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "react-build": "webpack -w -d",
-    "seed": "node database/seed.js",
-    "start": "nodemon server/index.js",
+    "dev:build": "webpack -w -d",
+    "dev:start": "nodemon server/index.js",
+    "mongo-data": "node database/Mongo/writeFileStream.js",
+    "mongo-seed": "mongoimport --db grubhub --collection restaurants --jsonArray --file /Users/matthew/Documents/HRLA29/nav-about/database/Mongo/streams/mongoData.json",
     "test": "jest",
     "test:c": "jest --coverage",
-    "changeBacktostart": "node server/index.js",
+    "start": "node server/index.js",
     "build": "webpack -p"
   },
   "jest": {
@@ -34,9 +35,13 @@
     "env-cmd": "^9.0.1",
     "express": "^4.16.4",
     "mongoose": "^5.5.8",
+    "morgan": "^1.9.1",
+    "pg": "^7.11.0",
+    "pg-hstore": "^2.3.3",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-icons": "^3.7.0"
+    "react-icons": "^3.7.0",
+    "sequelize": "^5.8.7"
   },
   "devDependencies": {
     "@babel/core": "^7.4.4",

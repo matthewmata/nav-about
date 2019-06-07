@@ -35,6 +35,6 @@ let restaurantSchema = new mongoose.Schema({
   categories: [String]
 });
 
-let Restaurant = mongoose.model('Restaurant', restaurantSchema);
+let Restaurant = mongoose.model('Restaurants', restaurantSchema);
 
 module.exports = Restaurant;
