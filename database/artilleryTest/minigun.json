@@ -1,0 +1,21 @@
+{
+  "config": {
+      "target": "http://127.0.0.1:3000",
+      "phases": [
+        { "duration": 20, "arrivalRate": 780}
+      ],
+      "defaults": {
+        "headers": {
+          "content-type": "application/json",
+          "x-my-service-auth": "987401838271002188298567"
+        }
+      }
+  },
+  "scenarios": [
+    {
+      "flow": [
+        { "get": {"url": "/api/restaurants"}}
+      ]
+    }
+  ]
+}

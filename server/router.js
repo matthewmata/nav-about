@@ -2,7 +2,7 @@ const router = require('express').Router();
 const controller = require('./controller');
 
 router.route('/restaurants')
-  .get(controller.getAll)
+  .get(controller.getOneRandom)
   .post(controller.postOne)
   .delete(controller.deleteAll);
 

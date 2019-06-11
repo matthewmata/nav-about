@@ -1,4 +1,4 @@
-const data = require("./seedData.json");
+const data = require("../seedData.json");
 
 const getRandomIntInclusive = (min, max) => {
   min = Math.ceil(min);

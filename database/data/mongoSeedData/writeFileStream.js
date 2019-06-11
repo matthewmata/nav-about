@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const dataGen = require('../../dataGen');
+const dataGen = require('./dataGen');
 
 let writeStream = fs.createWriteStream(path.resolve(__dirname, './mongoData.json'));
 
@@ -18,5 +18,6 @@ const populate = async () => {
 
 writeStream.write('[', populate);
 
-// mongoimport --db grubhub --collection restaurants --jsonArray --file /Users/matthew/Documents/HRLA29/nav-about/database/Mongo/streams/mongoData.json
+// mongoimport --db grubhub --collection restaurants --jsonArray --file database/data/mongoSeedData/mongoData.json --numInsertionWorkers 8
+// db.restaurants.createIndex({ id: 1 });
 

@@ -3,12 +3,14 @@ const path = require('path');
 const cors = require('cors');
 const db = require('../database/Mongo/index.js');
 const router = require('./router');
+const morgan = require('morgan');
 
 // Creating server and port number
 const PORT = process.env.PORT || 3000;
 const app = express();
 
 // Middleware
+// app.use(morgan('dev'));
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

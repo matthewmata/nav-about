@@ -1,3 +1,4 @@
 node_modules
 public/bundle.js
-database/Mongo/streams/mongoData.json
+database/data/mongoSeedData/mongoData.json
+database/data/postgresSeedData/postgresData.csv

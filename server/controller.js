@@ -5,8 +5,8 @@
 const Restaurant = require('../database/Postgres/dbHelpers');
 
 module.exports = {
-  getAll: (req, res) => {
-    Restaurant.getAll()
+  getOneRandom: (req, res) => {
+    Restaurant.getOneRandom()
     .then(result => res.status(200).send(result))
     .catch(err => res.status(404).send('Could not complete get request: ', err))
   },
