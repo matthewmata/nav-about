@@ -1,8 +1,8 @@
 var mongoose = require('mongoose');
 
-// `mongodb+srv://kjhogan:${process.env.DB_PASSWORD}@cluster0-hvkil.mongodb.net/test?retryWrites=true`
+// 'mongodb://localhost/grubhub'
 
-mongoose.connect('mongodb://localhost/grubhub', {
+mongoose.connect('mongodb://matthewmata1030:password@18.218.132.194/grubhub', {
   useNewUrlParser: true,
   useFindAndModify: false,
   useCreateIndex: true

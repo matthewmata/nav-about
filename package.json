@@ -11,7 +11,7 @@
     "dev:build": "webpack -w -d",
     "dev:start": "nodemon server/index.js",
     "mongo-data": "node database/data/mongoSeedData/writeFileStream.js",
-    "mongo-seed": "mongoimport --db grubhub --collection restaurants --jsonArray --file database/data/mongoSeedData/mongoData.json --numInsertionWorkers 8",
+    "mongo-seed": "mongoimport --collection restaurants --uri mongodb://matthewmata1030:password@18.218.132.194/grubhub --jsonArray --file /Users/matthew/Documents/HRLA29/nav-about/database/data/mongoSeedData/mongoData.json",
     "postgres-data": "node database/data/postgresSeedData/writeFileStream.js",
     "postgres-seed": "node database/postgres/models.js",
     "test": "jest",
