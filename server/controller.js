@@ -1,5 +1,5 @@
 // Uncomment for MongoDB w/Mongoose
-const Restaurant = require('../database/a/dbHelpers');
+const Restaurant = require('../database/mongo/dbHelpers');
 
 // Uncomment for Postgres w/Sequelize
 // const Restaurant = require('../database/Postgres/dbHelpers');
