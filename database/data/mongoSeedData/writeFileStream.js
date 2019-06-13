@@ -6,11 +6,11 @@ let writeStream = fs.createWriteStream(path.resolve(__dirname, './mongoData.json
 
 console.time('Finished generating data');
 const populate = async () => {
-  for (let i = 1; i <= 100; i++) {
-    if (!writeStream.write(JSON.stringify(dataGen(i)) + (i === 100 ? ']' : ','))) {
+  for (let i = 1; i <= 10000000; i++) {
+    if (!writeStream.write(JSON.stringify(dataGen(i)) + (i === 10000000 ? ']' : ','))) {
       await new Promise(resolve => writeStream.once('drain', resolve));
     }
-    if (i === 100) {
+    if (i === 10000000) {
       console.timeEnd('Finished generating data');
     }
   }
