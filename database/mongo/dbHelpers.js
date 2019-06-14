@@ -19,7 +19,6 @@ const randomId = () => Math.floor(Math.random() * (10000000 - 9000000 + 1)) + 90
 module.exports = {
   // Mongo
   getOneRandom: () => new Promise ((resolve, reject) => {
-    console.log('in random')
     db.collection('restaurants').findOne({_id: randomId()}, (err, items) => {
       if (err) {
         reject(err);
@@ -29,7 +28,6 @@ module.exports = {
     });
   }),
   getOne: (_id) => new Promise ((resolve, reject) => {
-    console.log('in getOne', _id)
     db.collection('restaurants').findOne({ _id: Number(_id) }, (err, items) => {
       if (err) {
         reject(err);
