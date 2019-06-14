@@ -3,7 +3,7 @@ const path = require('path');
 const cors = require('cors');
 const db = require('../database/mongo/index.js');
 const router = require('./router');
-require('newrelic');
+// require('newrelic');
 
 // Creating server and port number
 const PORT = 3000;
