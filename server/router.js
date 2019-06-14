@@ -6,7 +6,7 @@ router.route('/restaurants')
   .post(controller.postOne)
   .delete(controller.deleteAll);
 
-router.route('/restaurants/:id')
+router.route('/restaurants/:_id')
   .get(controller.getOne)
   .delete(controller.deleteOne)
   .put(controller.updateOne)
