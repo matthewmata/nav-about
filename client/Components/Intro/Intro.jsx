@@ -52,7 +52,7 @@ class Intro extends React.Component {
     const id = window.location.href.split("id=")[1];
     axios.get(`/api/restaurants/${id}`)
     .then(({ data }) => {
-      let restaurantInfo = data[0];
+      let restaurantInfo = data;
       this.setState({
         restaurant: restaurantInfo
       });

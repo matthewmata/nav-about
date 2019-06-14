@@ -8,7 +8,7 @@ module.exports = {
   getOneRandom: (req, res) => {
     Restaurant.getOneRandom()
     .then(result => res.status(200).send(result))
-    .catch(err => res.status(404).send('Could not complete get request: ', err))
+    .catch(err => res.status(404).send(err))
   },
   postOne: (req, res) => {
     let { name, address, phone, schedule, image, priceRange, ratings, categories } = req.body;
@@ -25,7 +25,7 @@ module.exports = {
     let { id } = req.params;
     Restaurant.getOne(id)
     .then(result => res.status(200).send(result))
-    .catch(err => res.status(404).send('Could not complete get request: ', err))
+    .catch(err => res.status(404).send(err))
   },
   deleteOne: (req, res) => {
     let { id } = req.params;

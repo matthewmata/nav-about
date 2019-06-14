@@ -2,7 +2,7 @@
 const Restaurant = require('./models');
 // Raw mongo, refactored _id to 1-10000000. mongoose wont query of _id of a preset number
 const mongo = require('mongodb').MongoClient;
-const url = 'mongodb://matthewmata1030:password@18.218.132.194/grubhub';
+const url = 'mongodb://ec2-18-218-132-194.us-east-2.compute.amazonaws.com';
 let db;
 
 mongo.connect(url,{ useNewUrlParser: true}, (err, client) => {
@@ -19,6 +19,7 @@ const randomId = () => Math.floor(Math.random() * (10000000 - 9000000 + 1)) + 90
 module.exports = {
   // Mongo
   getOneRandom: () => new Promise ((resolve, reject) => {
+    console.log('in random')
     db.collection('restaurants').findOne({_id: randomId()}, (err, items) => {
       if (err) {
         reject(err);
@@ -28,7 +29,8 @@ module.exports = {
     });
   }),
   getOne: (_id) => new Promise ((resolve, reject) => {
-    db.collection('restaurants').findOne({ _id }, (err, items) => {
+    
+    db.collection('restaurants').findOne({ _id: Number(_id) }, (err, items) => {
       if (err) {
         reject(err);
       } else {
