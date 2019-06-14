@@ -6,9 +6,9 @@ const getRandomIntInclusive = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
-const dataGen = (id) => {
+const dataGen = (_id) => {
   let restaurant = {};
-  restaurant.id = id
+  restaurant._id = _id
   restaurant.name = data[getRandomIntInclusive(0, 99)].name;
   restaurant.address = data[getRandomIntInclusive(0, 99)].address;
   restaurant.phone = data[getRandomIntInclusive(0, 99)].phone;
