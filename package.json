@@ -16,7 +16,7 @@
     "postgres-seed": "node database/postgres/models.js",
     "test": "jest",
     "test:c": "jest --coverage",
-    "start": "node server/index.js",
+    "start": "require('newrelic'); node server/index.js",
     "build": "webpack -p"
   },
   "jest": {
@@ -39,6 +39,7 @@
     "mongodb": "^3.2.7",
     "mongoose": "^5.5.8",
     "morgan": "^1.9.1",
+    "newrelic": "^5.10.0",
     "pg": "^7.11.0",
     "pg-hstore": "^2.3.3",
     "react": "^16.8.6",

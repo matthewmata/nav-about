@@ -29,7 +29,7 @@ module.exports = {
     });
   }),
   getOne: (_id) => new Promise ((resolve, reject) => {
-    
+    console.log('in getOne', _id)
     db.collection('restaurants').findOne({ _id: Number(_id) }, (err, items) => {
       if (err) {
         reject(err);
