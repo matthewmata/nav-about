@@ -14,8 +14,8 @@ class About extends React.Component {
   }
 
   fetchRestaurant() {
-    const _id = window.location.href.split("id=")[1];
-    axios.get(`/api/restaurants/${_id}`)
+    const id = window.location.href.split("id=")[1];
+    axios.get(`/api/restaurants/${id}`)
     .then(({ data }) => {
       let restaurantInfo = data[0];
       this.setState({
