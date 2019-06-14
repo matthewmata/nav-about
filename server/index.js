@@ -16,7 +16,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Serves static HTML file
-app.use('/restaurants/nav_intro', express.static(path.resolve(__dirname, '../public')));
+app.use('/loaderio-88dcab11607fc8f41723dfde14be6aec.txt', express.static(path.resolve(__dirname, '../loader.io/loader.txt')))
+app.use('/', express.static(path.resolve(__dirname, '../public')));
 
 // Router to handle all requests
 app.use('/api', router);
