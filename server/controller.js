@@ -23,20 +23,20 @@ module.exports = {
   },
   getOne: (req, res) => {
     let { id } = req.params;
-    Restaurant.getOne({ _id: id })
+    Restaurant.getOne(id)
     .then(result => res.status(200).send(result))
     .catch(err => res.status(404).send('Could not complete get request: ', err))
   },
   deleteOne: (req, res) => {
     let { id } = req.params;
-    Restaurant.deleteOne({ _id: id })
+    Restaurant.deleteOne(id)
     .then(() => res.status(200).send('Deleted One'))
     .catch(err => res.status(404).send('Could not complete get request: ', err))
   },
   updateOne: (req, res) => {
     let { id } = req.params;
     let{ name, address, phone, schedule, image, priceRange, ratings, categories } = req.body;
-    Restaurant.updateOne({ _id: id }, name, address, phone, schedule, image, priceRange, ratings, categories)
+    Restaurant.updateOne(id, name, address, phone, schedule, image, priceRange, ratings, categories)
     .then(() => res.status(200).send('Updated One'))
     .catch(err => res.status(404).send('Could not complete get request: ', err))
   },
