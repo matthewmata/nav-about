@@ -16,7 +16,7 @@
     "postgres-seed": "node database/postgres/models.js",
     "test": "jest",
     "test:c": "jest --coverage",
-    "start": "require('newrelic'); node server/index.js",
+    "start": "node server/index.js",
     "build": "webpack -p"
   },
   "jest": {
