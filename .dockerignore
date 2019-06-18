@@ -3,3 +3,4 @@ npm-debug.log
 database/data/mongoSeedData/mongoData.json
 database/data/postgresSeedData/postgresData.csv
 database/artilleryTest
+.env
