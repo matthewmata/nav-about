@@ -14,12 +14,10 @@ mongo.connect(url,{ useNewUrlParser: true}, (err, client) => {
   }
 })
 
-const randomId = () => Math.floor(Math.random() * (10000000 - 9000000 + 1)) + 9000000;
-
 module.exports = {
   // Mongo
-  getOneRandom: () => new Promise ((resolve, reject) => {
-    db.collection('restaurants').findOne({_id: randomId()}, (err, items) => {
+  getOneRandom: (_id) => new Promise ((resolve, reject) => {
+    db.collection('restaurants').findOne({ _id }, (err, items) => {
       if (err) {
         reject(err);
       } else {

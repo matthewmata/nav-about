@@ -2,7 +2,7 @@
 
 exports.config = {
   app_name: ['nav-about'],
-  license_key: `${process.env.NEWRELIC}`,
+  license_key: 'INSERT KEY HERE',
   logging: {
     level: 'trace',
     filepath: './newrelic_agent.log'

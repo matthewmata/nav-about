@@ -3,4 +3,5 @@ public/bundle.js
 database/data/mongoSeedData/mongoData.json
 database/data/postgresSeedData/postgresData.csv
 database/artilleryTest
+npm-debug.log
 .env
