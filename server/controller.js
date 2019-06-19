@@ -14,15 +14,29 @@ client.on('error', (err) => {
 
 module.exports = {
   getOneRandom: (req, res) => {
-    const randomId = () => Math.floor(Math.random() * (10000000 - 9999900 + 1)) + 9000000;
-    const restaurantId = randomId();
+    // Randomizer for id
+    
+    // Random Popular id is 9,999,900 - 10,000,000
+    const randomIdPopular = () => Math.floor(Math.random() * (10000000 - 9999900)) + 9000000;
+    // Random id is 1 - 10,000,000
+    const randomIdAll = () => Math.floor(Math.random() * 10000000) + 1
+    // 30% chance to get random Popular id
+    if (Math.random() > 0.7) {
+      var restaurantId = randomIdPopular();
+    // 70% chance to get random id
+    } else {
+      var restaurantId = randomIdAll();
+    }
+    
     client.get(restaurantId, (err, result) => {
+      // Grabs from redis cache
       if (result) {
         res.status(200).send(JSON.parse(result))
+      // Grabs from database and stores in cache for 0.6 secs
       } else {
         Restaurant.getOneRandom(restaurantId)
         .then(result => {
-          client.setex(restaurantId, 60, JSON.stringify(result));
+          client.setex(restaurantId, 0.6, JSON.stringify(result));
           res.status(200).send(result);
         })
         .catch(err => res.status(404).send(err))
