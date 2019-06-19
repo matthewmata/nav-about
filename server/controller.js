@@ -4,11 +4,30 @@ const Restaurant = require('../database/mongo/dbHelpers');
 // Uncomment for Postgres w/Sequelize
 // const Restaurant = require('../database/Postgres/dbHelpers');
 
+// REDIS SETUP
+const client = require('redis').createClient();
+
+client.on('error', (err) => {
+  console.log('Error in Redis: ', err);
+})
+
+
 module.exports = {
   getOneRandom: (req, res) => {
-    Restaurant.getOneRandom()
-    .then(result => res.status(200).send(result))
-    .catch(err => res.status(404).send(err))
+    const randomId = () => Math.floor(Math.random() * (10000000 - 9999900 + 1)) + 9000000;
+    const restaurantId = randomId();
+    client.get(restaurantId, (err, result) => {
+      if (result) {
+        res.status(200).send(JSON.parse(result))
+      } else {
+        Restaurant.getOneRandom(restaurantId)
+        .then(result => {
+          client.setex(restaurantId, 60, JSON.stringify(result));
+          res.status(200).send(result);
+        })
+        .catch(err => res.status(404).send(err))
+      }
+    })
   },
   postOne: (req, res) => {
     let { name, address, phone, schedule, image, priceRange, ratings, categories } = req.body;
