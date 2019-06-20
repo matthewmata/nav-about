@@ -19,7 +19,7 @@ module.exports = {
     // Random Popular id is 9,999,900 - 10,000,000
     const randomIdPopular = () => Math.floor(Math.random() * (10000000 - 9999900)) + 9000000;
     // Random id is 1 - 10,000,000
-    const randomIdAll = () => Math.floor(Math.random() * 10000000) + 1
+    const randomIdAll = () => Math.floor(Math.random() * 10000000 - 9000000) + 9000000
     // 30% chance to get random Popular id
     if (Math.random() > 0.7) {
       var restaurantId = randomIdPopular();
@@ -36,7 +36,7 @@ module.exports = {
       } else {
         Restaurant.getOneRandom(restaurantId)
         .then(result => {
-          client.setex(restaurantId, 0.6, JSON.stringify(result));
+          client.setex(restaurantId, 2, JSON.stringify(result));
           res.status(200).send(result);
         })
         .catch(err => res.status(404).send(err))
