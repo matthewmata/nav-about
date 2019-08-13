@@ -1,14 +1,12 @@
 # Grubhub System Design
 > Scaled up on AWS EC2 instances
 
-Result: 4500 request per second within 0.1 % of error rate
+Result: 5500 request per second within 0.1 % of error rate
 
 - Inherited front-end codebase and scaled up on AWS EC2 instances
 - Populated 10M fake product data with Node.js Streams and seeded on MongoDB
 - Benchmarked MongoDB and Postgres, and got a better result with MongoDB in terms of latency and error rate under high traffic
-- Optimized Nginx on Ubuntu with the least connection algorithm
-- Implemented DB replica set to handle 4500 request per second within 0.1 % of error rate
-
+- Optimized Nginx on Ubuntu with the least connection algorithm to handle 5500 request per second within 0.1 % of error rate
 
 ### Usage
 
