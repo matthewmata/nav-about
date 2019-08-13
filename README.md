@@ -1,45 +1,32 @@
-# Mock Grubhub - Navbar, Intro, and About
+# Grubhub System Design
+> Scaled up on AWS EC2 instances
 
-> Recreation of Grubhub's navbar, introduction to the restaurant, and 'about restaurant' information.
+![](microservice.png)
 
-## Related Projects
+Result: 4500 request per second within 0.1 % of error rate
 
-  - [Menu and Cart by Calvin Shum](https://github.com/hrla29-group-targaryen/menu-cart)
-  - [Delivery/Pickup Time and Sponsored Restaurants by James Kim](https://github.com/hrla29-group-targaryen/time-sponsored)
-  - [Reviews by Ramin Rabani](https://github.com/hrla29-group-targaryen/reviews)
+- Inherited front-end codebase and scaled up on AWS EC2 instances
+- Populated 10M fake product data with Node.js Streams and seeded on MongoDB
+- Benchmarked MongoDB and Postgres, and got a better result with MongoDB in terms of latency and error rate under high traffic
+- Optimized Nginx on Ubuntu with the least connection algorithm
+- Implemented DB replica set to handle 4500 request per second within 0.1 % of error rate
 
-## Table of Contents
 
-1. [Usage](#Usage)
-1. [Requirements](#requirements)
-1. [Development](#development)
-
-## Usage
+### Usage
 
 ```
-git clone https://github.com/hrla29-group-targaryen/nav-about.git
+git clone https://github.com/matthewmata/nav-about.git
 cd nav-about
 npm install
-npm run seed-db (if needed)
-npm run start
+npm start
 ```
 
-## Requirements
+### Requirements
 
-Nodejs, Express, React
+You need to install Nodejs.
 
-## Development
+### Development Tools
 
-* [react.js](https://reactjs.org/docs/getting-started.html) - React documentation
-* [express.js](https://expressjs.com/en/api.html) - Express documentation
-* [mongoose](https://mongoosejs.com/docs/index.html) - Mongoose documentation
-
-### Installing Dependencies
-
-From within the root directory:
-
-```sh
-npm install -g webpack
-npm install
-```
-
+* [react.js](https://www.npmjs.com/package/react) - The official React.js website
+* [express.js](https://www.npmjs.com/package/express) - The official Express.js website
+* [webpack 4](https://www.npmjs.com/package/webpack) - The official Webpack website
