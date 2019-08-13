@@ -1,8 +1,6 @@
 # Grubhub System Design
 > Scaled up on AWS EC2 instances
 
-![](microservice.png)
-
 Result: 4500 request per second within 0.1 % of error rate
 
 - Inherited front-end codebase and scaled up on AWS EC2 instances
